@@ -1,9 +1,9 @@
 Lab - Odds and Ends
 ==========
-Follow the instructions line-by-line.  
+Follow the instructions line-by-line.
 
-* Type in the commands as is, but ignore the beginning prompt.  
-* Enter, tab, up and down are represented by <ENTER><TAB>,<UP> and <DOWN>.  
+* Type in the commands as is, but ignore the beginning prompt.
+* Enter, tab, up and down are represented by <ENTER><TAB>,<UP> and <DOWN>.
 * "No output" or "nothing happens" are valid answers to any of the questions.
 ==========
 
@@ -16,7 +16,7 @@ Follow the instructions line-by-line.
 
 Write the command you used to do this below.
 ----------
-
+nano temp.txt
 
 
 ==========
@@ -29,13 +29,18 @@ Write the command you used to do this below.
 
 Write the command that you used to do this, and the last two lines of output.
 ----------
-
+ps aux | grep -i nano
+student           3566   0.0  0.0  4277008    872 s000  S+    7:00PM   0:00.00 grep -i nano
+student           3555   0.0  0.0  4295680   1236 s001  S+    6:59PM   0:00.00 nano
 
 ==========
 4. Run the same command, but look for a specific process.  (It's the version of the command that has | grep ...).  Look for the program that you started to edit a file, nano.
 
 Write the command that you used to do this, and all of the output.
 ----------
+grep -i nano
+student           3566   0.0  0.0  4277008    872 s000  S+    7:00PM   0:00.00 grep -i nano
+student           3555   0.0  0.0  4295680   1236 s001  S+    6:59PM   0:00.00 nano temp.txt
 
 
 ==========
@@ -48,6 +53,9 @@ Write the command that you used to do this, and all of the output.
 6. Go to your other terminal window.  What happened to nano?  What was the message on the screen?
 
 ----------
+Last login: Wed Oct  2 18:25:02 on ttys000
+v120-ent-015:~ student$ nano temp.txt
+Received SIGHUP or SIGTERM
 
 
 ==========
@@ -67,36 +75,39 @@ Quit and save when you're done.
 
 What command did you use to do this?
 ----------
-
+nano ./hello.sh
 
 ==========
-9. Change the permissions (modify) on hello.sh so that the *user* (u) can *execute* (x) it: 
+9. Change the permissions (modify) on hello.sh so that the *user* (u) can *execute* (x) it:
 
 Write the commands that you used to do this below.
 ----------
-
+chmod ufx execute
 
 ==========
 10. Run your script (hello.sh).
 
 How did you do this?  What was the output?
 ----------
-
+./hello.sh
+Hi there
 
 ==========
 11. Change to the root directory.  Try running your script again (hello.sh).  What was the output (if there's an error, write it out)?
 ----------
-
+ No such file or directory
 
 ==========
 12. Now trying using the full, absolute path to your script (that is, starting with /...).  What did you write in?  What did it do?
 ----------
+Users/student/hello.sh
+hi there!
 
 
 ==========
-13.  Go back to the directory that your hello.sh script was in.  What command did you use to change to this directory? 
+13.  Go back to the directory that your hello.sh script was in.  What command did you use to change to this directory?
 ----------
-
+cd/user/script
 
 ==========
 14. Type in the following command:
@@ -105,6 +116,8 @@ echo $PATH
 
 Write down the output of this command
 ----------
+echo $Path
+/opt/local/bin:/Applications/anaconda/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/usr/local/mysql/bin/
 
 
 ==========
@@ -114,7 +127,8 @@ env
 
 Write down the last two lines of output for this command
 ----------
-
+_=/usr/bin/env
+OLDPWD=/Users/student
 
 ==========
 16. Set your PATH to include your home directory.  Do the following (substituting student or username for professor)
@@ -128,7 +142,7 @@ echo $PATH
 Write down the output of the last command.  It should include your home folder.
 ----------
 
-
+/opt/local/bin:/Applications/anaconda/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/usr/local/mysql/bin/:/Users/student
 ==========
 17.  Go back to root (/)
 
@@ -138,7 +152,7 @@ hello.sh
 
 It should work now!  What is the output?
 ----------
-
+hi there!
 
 ==========
 18.  Save this file in the repository that you created from parts 1 and 2.
